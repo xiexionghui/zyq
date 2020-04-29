@@ -1,0 +1,202 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="layui/css/layui.css">
+<link rel="stylesheet" th:href="@{../css/new.css}">
+<head th:replace="~{fragments/header1 :: header1}"></head>
+<body style="background-color:#253a4d">
+	<!-- <div class="index-page">
+    <img src="images/news_banner.jpg" class="am-img-responsive" th:src="@{../images/news_banner.jpg}"
+         alt="news_banner"/>
+</div> -->
+
+	<div class="wrapper" id="wrapper">
+		<div class="container-fluid px-0">
+			<div id="header">
+				<div id="header_0">
+					<div class="index-page">
+						<img src="images/news_banner.jpg" class="am-img-responsive"
+							th:src="@{../images/news_banner.jpg}" alt="news_banner" />
+					</div>
+				</div>
+			</div>
+
+			<div id="column">
+				<div id="column_0">
+					<div id="inner">
+						<div id="section">
+							
+							<div class="am-u-sm-12 am-u-md-8 am-u-lg-6 am-u-sm-centered biaoyu">
+           						 <h3>关注我们的动态</h3>
+           						 <p>搜罗行业内最新动态／最新的热点，敬请关注</p>
+       	 					</div>
+							<div class="subnews">
+           						 <a href="javascript:void(0);" id="gsdt" onclick="changeType(1)" class="cur">公司动态</a>
+            					 <a href="javascript:void(0);" id="hydt" onclick="changeType(2)" class="">行业动态</a>
+        					</div>
+        					<div class="clear" style="height: 8px"></div>
+						
+						
+							<div id="section__wrapper tabs-container">
+								<div class="tab-content">
+									<!-- start -->
+									<div aria-labelledby="nav-press-release-tab" role="tabpanel"
+										id="nav-press-release" class="tab-pane fade show active">
+
+										<ul class="content-list" id="newsListReplace">
+											<li class="content-list-item-container " th:each="news1 : ${newslist1}"><a
+												class="content-list-item"  
+												href="#" th:href="'/news/'+${news1.id}"><div
+														class="content-list-item__img">
+														<img src="../images/xinwen.jpg" th:src="${news1.img}" style="max-width: 60%">
+													</div>
+													<div class="content-list-item__detail">
+														<div class="content-list-item__detail__date">
+															<div class="content-list-item__detail__date__d" th:text="${#dates.format(news1.createTime, 'yyyy-MM-dd')}"></div>
+														</div>
+														<div class="content-list-item__detail__desc"><h3 th:text="${news1.title}">文章标题</h3></div>
+													</div></a></li>
+
+
+
+										</ul>
+										<input th:value="${page.totalElements}" type="hidden" value="6" id="pageInput">
+
+									
+
+									</div>
+
+
+									<!-- 结束 -->
+
+								</div>
+								
+								<div id="page" class="am-text-center"></div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		
+	</div>
+	<div th:replace="~{fragments/footer1 :: footer1}"></div>
+
+
+
+
+	<!-- <div class="section">
+    <div class="container">
+        <div class="am-u-sm-12 am-u-md-8 am-u-lg-6 am-u-sm-centered biaoyu">
+            <h3>关注我们的动态</h3>
+            <p>搜罗行业内最新动态／最新的热点，敬请关注</p>
+        </div>
+        <div class="subnews">
+            <a href="javascript:void(0);" id="gsdt" onclick="changeType(1)">公司动态</a>
+            <a href="javascript:void(0);" id="hydt" onclick="changeType(2)">行业动态</a>
+        </div>
+        <div class="clear" style="height: 8px"></div>
+        <div id="newsList">
+            <div id="newsListReplace">
+                <ul class="am-avg-sm-2" style="border-top:1px solid #ddd ">
+                    <li th:each="news1 : ${newslist1}" style="padding: 30px 10px">
+                        <div class="am-g">
+                            <div class="am-u-sm-5">
+                                <img src="images/news/1.png" th:src="${news1.img}" class="news-title-img">
+                            </div>
+                            <div class="am-u-sm-7">
+                                <h3 th:text="${news1.title}">文章标题</h3>
+                                <div class="news-desc" th:text="${news1.summary}">内容摘要</div>
+                                <div>
+                                    <a class="am-btn am-btn-primary news-detail-btn" href="#"
+                                       th:href="'/news/'+${news1.id}">查看详情</a>
+                                    <span class="am-text-sm"
+                                          th:text="${#dates.format(news1.createTime, 'yyyy-MM-dd')}">
+                                            1992-07-11
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <input th:value="${page.totalElements}" type="hidden" value="6" id="pageInput">
+            </div>
+        </div>
+        <div id="page" class="am-text-center"></div>
+    </div>
+</div> -->
+	<!-- <div th:replace="~{fragments/footer1 :: footer1}"></div> -->
+	<script type="text/javascript" th:src="@{../layui/layui.js}"></script>
+	<script type="text/javascript">
+    window.onload = function () {
+        $('#gsdt').addClass('cur');
+    };
+    var newsType=1;
+
+    function changeType(type) {
+        if (type === 1) {
+            $('#gsdt').addClass('cur');
+            $('#hydt').removeClass('cur');
+        } else if (type === 2) {
+            $('#hydt').addClass('cur');
+            $('#gsdt').removeClass('cur');
+        }
+        newsType=type;
+        $.ajax({
+            url: '/news/listTwo/' + type+"/1",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $('#nav-press-release').html(data);
+                loadPage();
+            },
+            error: function () {
+                alert("异常! 未能成功获取数据");
+            }
+        });
+    }
+
+    $(function () {
+        initLayPage();
+    });
+
+    function initLayPage() {
+        layui.use(['laypage'], function () {
+            page = layui.laypage;
+            loadPage();
+        })
+    }
+
+    function loadPage() {
+        page.render({
+            elem: 'page',
+            count: $('#pageInput').val(),
+            limit: 6,
+            first: "首页",
+            last: "尾页",
+            layout: ['prev', 'page', 'next', 'skip'],
+            theme:'#0e90d2',
+            jump: function (obj, first) {
+                if (!first) {
+                    $.ajax({
+                        url: '/news/listTwo/' + newsType+"/"+obj.curr,
+                        type: 'GET',
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            $('#nav-press-release').html(data);
+                        },
+                        error: function () {
+                            alert("异常! 未能成功获取数据");
+                        }
+                    })
+                }
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

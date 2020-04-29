@@ -1,0 +1,34 @@
+Manifest-Version: 1.0
+Class-Path: jackson-module-parameter-names-2.9.7.jar fastjson-1.2.54.j
+ ar jboss-logging-3.3.2.Final.jar jackson-datatype-jsr310-2.9.7.jar by
+ te-buddy-1.9.3.jar spring-boot-starter-thymeleaf-2.1.0.RELEASE.jar lo
+ gback-classic-1.2.3.jar jackson-annotations-2.9.0.jar jackson-databin
+ d-2.9.7.jar spring-webmvc-5.1.2.RELEASE.jar unbescape-1.1.6.RELEASE.j
+ ar aspectjweaver-1.9.2.jar spring-jcl-5.1.2.RELEASE.jar spring-boot-s
+ tarter-tomcat-2.1.0.RELEASE.jar commons-codec-1.11.jar log4j-to-slf4j
+ -2.11.1.jar javax.persistence-api-2.2.jar spring-boot-starter-data-jp
+ a-2.1.0.RELEASE.jar tomcat-embed-el-9.0.12.jar spring-boot-starter-js
+ on-2.1.0.RELEASE.jar slf4j-api-1.7.25.jar spring-boot-autoconfigure-2
+ .1.0.RELEASE.jar thymeleaf-extras-java8time-3.0.1.RELEASE.jar javax.a
+ nnotation-api-1.3.2.jar tomcat-embed-core-9.0.12.jar spring-orm-5.1.2
+ .RELEASE.jar classmate-1.4.0.jar hibernate-validator-6.0.13.Final.jar
+  spring-data-jpa-2.1.2.RELEASE.jar snakeyaml-1.23.jar hibernate-commo
+ ns-annotations-5.0.4.Final.jar hibernate-core-5.3.7.Final.jar jackson
+ -datatype-jdk8-2.9.7.jar spring-aspects-5.1.2.RELEASE.jar jul-to-slf4
+ j-1.7.25.jar jackson-core-2.9.7.jar validation-api-2.0.1.Final.jar ja
+ vassist-3.23.1-GA.jar HikariCP-3.2.0.jar spring-tx-5.1.2.RELEASE.jar 
+ tomcat-embed-websocket-9.0.12.jar jaxb-api-2.3.1.jar javax.activation
+ -api-1.2.0.jar spring-boot-starter-2.1.0.RELEASE.jar javax.transactio
+ n-api-1.3.jar dom4j-2.1.1.jar spring-beans-5.1.2.RELEASE.jar spring-a
+ op-5.1.2.RELEASE.jar antlr-2.7.7.jar spring-boot-starter-aop-2.1.0.RE
+ LEASE.jar logback-core-1.2.3.jar spring-data-commons-2.1.2.RELEASE.ja
+ r spring-boot-starter-web-2.1.0.RELEASE.jar thymeleaf-spring5-3.0.11.
+ RELEASE.jar spring-web-5.1.2.RELEASE.jar attoparser-2.0.5.RELEASE.jar
+  thymeleaf-3.0.11.RELEASE.jar spring-context-5.1.2.RELEASE.jar log4j-
+ api-2.11.1.jar mysql-connector-java-8.0.13.jar spring-jdbc-5.1.2.RELE
+ ASE.jar spring-core-5.1.2.RELEASE.jar spring-boot-2.1.0.RELEASE.jar s
+ pring-boot-starter-jdbc-2.1.0.RELEASE.jar spring-expression-5.1.2.REL
+ EASE.jar jandex-2.0.5.Final.jar spring-boot-starter-logging-2.1.0.REL
+ EASE.jar
+Main-Class: com.ubo.zyq.ZyqApplication
+

@@ -1,0 +1,103 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="layui/css/layui.css">
+<head th:replace="~{fragments/header1 :: header1}"></head>
+<link rel="stylesheet" th:href="@{../css/product.css}">
+
+<body>
+
+	<div id="bd">
+
+
+		<div class="wp">
+			<div class="index-page">
+				<img src="../images/产品页面_02.jpg" class="am-img-responsive" alt="" />
+			</div>
+			<div class="am-container" style="padding-bottom: 20px">
+				<ol class="am-breadcrumb">
+					<li><a href="/index">首页</a></li>
+					<li class="am-active"><a href="/product">产品中心</a></li>
+				</ol>
+			</div>
+
+			<!-- ul列表开始 -->
+			<ul class="m-list1" id="productListReplace">
+
+				<li th:each="pro1 : ${product1}">
+				
+					<a href="#" th:href="'/product/product.html/'+${pro1.id}" class="con" target="_blank">
+						<p>[[${pro1.productName}]]</p>
+						<div class="pic">
+							<img src="" th:src="${pro1.productImages}" alt="无法加载图片">
+						</div>
+					<!-- <h3>[[${pro1.productName}]]</h3> -->
+					</a>
+				
+				</li>
+
+				
+				
+			</ul>
+			<input th:value="${page.totalElements}" type="hidden" value="6"
+				id="pageInput">
+			<!-- ul列表结束 -->
+
+			
+		</div>
+		<div id="page" class="am-text-center"></div>
+		<!-- 分页开始 -->
+		
+	</div>
+<div th:replace="~{fragments/footer1 :: footer1}"></div>
+<script type="text/javascript" th:src="@{../layui/layui.js}"></script>
+	<script>
+		$('#prod-tab').find('a').on('open.tabs.amui', function(e) {
+			console.log('[%s] 选项卡打开了', $(this).text());
+		});
+		$('.am-thumbnail img').hover(function() {
+			$(this).addClass('am-animation-scale-down');
+		}, function() {
+			$(this).removeClass('am-animation-scale-down');
+		})
+		
+	$(function () {
+			initLayPage();
+    	});
+	
+    function initLayPage() {
+        layui.use(['laypage'], function () {
+            page = layui.laypage;
+            loadPage();
+        })
+    }
+
+		function loadPage() {
+			page.render({
+				elem : 'page',
+				count : $('#pageInput').val(),
+				limit : 8,
+				first : "首页",
+				last : "尾页",
+				layout : [ 'prev', 'page', 'next', 'skip' ],
+				theme : '#0e90d2',
+				jump : function(obj, first) {
+					if (!first) {
+						$.ajax({
+							url : '/product/product/list/' + obj.curr,
+							type : 'GET',
+							contentType : "application/json; charset=utf-8",
+							success : function(data) {
+								$('#productListReplace').html(data);
+								
+							},
+							error : function() {
+								alert("异常! 未能成功获取数据");
+							}
+						})
+					}
+				}
+			});
+		}
+	</script>
+</body>
+</html>

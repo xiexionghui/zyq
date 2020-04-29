@@ -1,0 +1,148 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org"
+	th:fragment="header1">
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title >[[${enterPriseinFormation.browserTitle}]]</title>
+<meta name="description"
+	content="深圳市联合蓝海黄金材料科技股份有限公司是深圳市联合蓝海投资控股集团的下属企业，成立于2010年5月25日，是一家专注于无氰环保镀金工艺技术的研发、服务、推广应用及智能制造技术研发的国家级高新技术企业。">
+<meta name="keywords" content="硬金,联合蓝海,硬金加工,无氰镀金,镀金液,无氰电镀">
+<meta name="format-detection" content="telephone=no">
+<link rel="alternate icon" type="image/png"
+	th:href="@{/images/logo/favicon.png}"><!-- ../ -->
+<link rel="stylesheet"
+	href="https://cdn.staticfile.org/amazeui/2.7.2/css/amazeui.min.css">
+<link rel="stylesheet" th:href="@{/css/common.css}"><!-- ../ -->
+
+<!-- 引入样式 -->
+<link rel="stylesheet"
+	href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
+<script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?4a7713e9a04e10d070e0ad1f80cdee9d";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<!--[if lt IE 9]>
+<div class="am-modal am-modal-no-btn am-modal-active" tabindex="-1" id="doc-modal-1"
+     style="display: block; width: 400px; margin-left: -200px; margin-top: -112px;">
+    <div class="am-modal-dialog">
+        <div class="am-modal-bd">您的浏览器版本过低，请更换浏览器后继续访问
+            <a href="http://browsehappy.com/" target="_blank" class="am-btn am-btn-danger am-btn-sm am-radius"
+               rel="nofollow">速速点击换一个</a>
+        </div>
+    </div>
+</div>
+<![endif]-->
+<body>
+
+	<div id="hd">
+		<!-- class="header-box" -->
+		<div class="top">
+			<div class="wp">
+				<div class="hd-r">
+					<ul>
+						
+						<li
+							class=" a1 icon s1" target="_blank">服务热线</li>
+						<li class="a1 icon shengming" >[[${enterPriseinFormation.serviceRe}]]</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="wp">
+			<!-- logo -->
+			<a href="/" class="logo"> <img src="/images/logo/logo198x72.png"
+				alt="联合蓝海">
+			</a>
+
+			<!-- logo end! -->
+
+			<!-- nav -->
+			<div class="nav">
+				<ul>
+					<li><a href="/" class="a1">首页 <!-- <em>
+    					<i style="display: none; height: 11px; padding: 0px; margin: 0px 0px 0px -17px; width: 34px; opacity: 1;">
+    					</i>
+    				</em> -->
+					</a></li>
+
+					<li><a href="/about" class="a1">企业简介<em><i
+								style="display: none; height: 11px; padding: 0px; margin: 0px 0px 0px -17px; width: 34px; opacity: 1;"></i></em></a>
+					</li>
+
+					<li><a href="/product/productType" class="a1">产品中心<em><i
+								style="display: none; height: 11px; padding: 0px; margin: 0px 0px 0px -17px; width: 34px; opacity: 1;"></i></em></a>
+					</li>
+					
+					<li><a href="/honor" class="a1">资质证书<em><i
+								style="display: none; height: 11px; padding: 0px; margin: 0px 0px 0px -17px; width: 34px; opacity: 1;"></i></em></a>
+					</li>
+
+					<li><a href="/xnew" class="a1">新闻中心<em></em></a></li>
+
+					<li><a href="/lianxi" class="a1" >联系我们<em></em></a></li>
+				</ul>
+			</div>
+			<!-- nav end -->
+
+			<!-- 列表右边图片设置 -->
+			<div class="hd-r">
+				<ul>
+					<li><a href="#" class="tudor" target="_blank"><img src="" th:src="${enterPriseinFormation.logo}"/></a></li>
+					<li><a href="#" class="rolex" target="_blank"><img src="" th:src="${enterPriseinFormation.logotwo}"/></a></li>
+				</ul>
+
+			</div>
+			<div class="c"></div>
+			<!-- 列表右边图片设置结束 -->
+
+			<!-- <div class="header">
+            <div class="am-g am-text-middle">
+                <div class="am-u-md-5 header-left">
+                    <a href="/">
+                        <img src="images/logo/logo198x72.png" th:src="@{../images/logo/logo198x72.png}" alt="联合蓝海"/>
+                    </a>
+                    <strong>全球无氰镀金技术领军企业</strong>
+                </div>
+                <div class="am-u-md-7 header-right">
+                    <div class="contact">
+                        <span>全国服务热线</span>
+                        <strong>400-931-8081</strong>
+                    </div>
+                    <i class="icon am-icon-phone-square"></i>
+                </div>
+            </div>
+        </div> -->
+		</div>
+
+		<!-- <nav class="nav-contain" data-am-sticky>
+        <div class="nav-inner">
+            <ul class="am-nav am-nav-pills am-nav-justify" style="font-size: 1.4rem">
+                <li><a href="/">首页</a></li>
+                <li><a href="about" th:href="@{/about}">企业简介</a></li>
+                <li><a href="" th:href="@{/productxxh} ">产品中心</a></li>
+                
+                <li><a href="honor" th:href="@{/honor}">资质证书</a></li>
+                               <li><a href="product" th:href="@{/product/}">产品中心</a></li>
+                <li><a href="news" th:href="@{/news}">新闻中心</a></li>
+                <li><a href="contact" th:href="@{/contact}">联系我们</a></li>
+            </ul>
+        </div>
+    </nav> -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header1 :: header1}"></head>
+<body>
+<div class="index-page">
+    <img src="../images/产品页面_02.jpg" class="am-img-responsive" alt=""/>
+</div>
+<div class="am-container" style="padding-bottom: 20px">
+    <ol class="am-breadcrumb">
+        <li><a href="/index">首页</a></li>
+        <li class="am-active">产品中心</li>
+    </ol>
+    <div class="am-tabs" data-am-tabs id="prod-tab">
+        <ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
+            <li th:class="${cateTypeIdx.first?'am-active':''}" th:each="cateType,cateTypeIdx:${cateTypeList}">
+                <a th:href="${'#tab'+cateTypeIdx.index}" th:text="${cateType.cateName}">恣意</a>
+            </li>
+        </ul>
+        <div class="am-tabs-bd">
+            <div th:class="${cateTypeIdx.first?'am-tab-panel am-active':'am-tab-panel'}"
+                 th:id="${'tab'+cateTypeIdx.index}"
+                 th:each="cateType,cateTypeIdx:${cateTypeList}">
+
+                <div th:if="${#lists.isEmpty(cateType.children)}" class="am-text-center">
+                    <h3>此分类下暂无相关产品</h3>
+                </div>
+                <div th:unless="${#lists.isEmpty(cateType.children)}">
+                    <div style="padding: 15px 45px 20px 45px">
+                        <button class="am-btn am-btn-default am-btn-xs am-radius"
+                                th:each="cate,cateIdx:${cateType.children}"
+                                th:attr="data-cateId=${cate.cateId}" th:text="${cate.cateName}">按钮 - xs
+                        </button>
+                    </div>
+                    <div class="am-g">
+                        <div class="am-u-sm-3" th:each="img,imgidx:${cateTypeList}"
+                             th:class="${imgidx.last and (imgidx.size%4!=0) ? 'am-u-sm-3 am-u-sm-pull'+((imgidx.size%4)-4)*3+'':'am-u-sm-3'}">
+                            <a href="#" class="am-thumbnail">
+                                <img src="../images/news.jpg" alt=""/>
+                                <h3 class="am-thumbnail-caption" th:text="${imgidx.size}%4">图片标题 #2</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div th:replace="~{fragments/footer1 :: footer1}"></div>
+<script>
+    $('#prod-tab').find('a').on('open.tabs.amui', function (e) {
+        console.log('[%s] 选项卡打开了', $(this).text());
+    });
+    $('.am-thumbnail img').hover(function () {
+        $(this).addClass('am-animation-scale-down');
+    }, function () {
+        $(this).removeClass('am-animation-scale-down');
+    })
+</script>
+</body>
+</html>

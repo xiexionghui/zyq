@@ -1,0 +1,58 @@
+body{background-color: #F2F2F2}
+body .site-demo-nav .layui-nav-item{line-height: 40px}
+body .layui-layout-admin .site-demo{bottom: 60px; padding: 0;}
+.loginbox{
+    width: 340px;
+    margin: 0 auto;
+}
+
+.loginbox .boxtitle{
+    padding-bottom: 45px;
+}
+.loginbox .layui-form-item .layui-input-inline{
+    width: 200px;
+    margin-right: 0;
+}
+.loginbox .loginbtn{
+    width: 100%;
+    font-size: 18px;
+}
+
+.header{height: 59px; border-bottom: 1px solid #404553;  background-color: #393D49;}
+.logo{position: absolute; left: 0; top: 16px;}
+.logo img{width: 82px; height: 31px;}
+
+.header .layui-nav{position: absolute; right: 0; top: 0; padding: 0; background: none;}
+.header .layui-nav .layui-nav-item{margin: 0 20px; }
+.header .layui-nav .layui-nav-item[mobile]{display: none;}
+
+.header .layui-container .logo{left: 15px;}
+.header .layui-container .layui-nav{right: 15px;}
+
+.menu{position: absolute; right: 0; top: 0; line-height: 65px;}
+.menu a{display:inline-block; *display:inline; *zoom:1; vertical-align:top;}
+.menu a{position: relative; padding: 0 20px; margin: 0 20px; color: #c2c2c2; font-size: 14px;}
+.menu a:hover{color: #fff; transition: all .5s; -webkit-transition: all .5s}
+.menu a.this{color: #fff}
+.menu a.this::after{content: ''; position: absolute; left: 0; bottom: -1px; width: 100%; height: 5px; background-color: #5FB878;}
+
+.header-index{background-color: #05031A; border: none;}
+.header-index .site-banner-bg{}
+.header-index[spring]{background-color: #0D1206}
+.header-index[summer]{background-color: #0A0E11}
+.header-index[autumn]{background-color: #100903}
+.header-index[winter]{background-color: #110F25/*#06041C*/}
+
+.header-demo{height: 60px; border-bottom: none;}
+.header-demo .logo{left: 40px;}
+.header-demo .layui-nav{top: 0;}
+.header-demo .layui-nav .layui-nav-item{margin: 0 10px;}
+.header-demo .layui-nav .layui-this a{padding: 0 30px;}
+
+.site-demo-result{position: absolute; right: 0; top: 0; bottom: 0; width: 100%;}
+.site-demo-result iframe{position: absolute; width: 100%; height: 100%;}
+
+
+.frame-body{
+    padding: 20px 20px;
+}

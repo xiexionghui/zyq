@@ -1,0 +1,363 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header1 :: header1}"></head>
+<body>
+	<div class="am-slider am-slider-default" data-am-flexslider
+		id="demo-slider-0">
+		
+		<ul class="am-slides">
+			<li th:each="ha :${homepageAds}">
+			<img src="images/guanggao1.jpg"  th:src="${ha.logo}" class="am-img-responsive"  
+				alt="图片无法加载" />
+			</li>
+				
+		</ul>
+	</div>
+	
+	
+	
+	
+	<div class="index-box index-m3">
+        
+        <div class="img">
+            <img src="/images/10502f84p8.jpg" alt="">
+        </div>
+        <div class="txt">
+            <div>
+                
+                <h3>联合蓝海</h3>
+                <h4>企业介绍</h4>
+                <p>深圳市联合蓝海黄金材料科技股份有限公司是深圳市联合蓝海投资控股集团的下属企业，<br>成立于2010年5月25日，是一家专注于无氰环保镀金工艺技术的研发、服务、推广应用及智能制造技术研发的国家级高新技术企业。</p>
+                <a href="/about" target="_blank">更多</a>
+                
+            </div>
+        </div>      
+    </div>
+    
+
+
+
+	
+	
+	
+	
+
+	
+	
+	<div class="section" style="background-color: #E5E5E5">
+		<div class="container am-text-center" style="padding: 0 100px">
+			<div>
+				<h2 class="section--title">资质证书</h2>
+			</div>
+			<ul data-am-widget="gallery"
+				class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"
+				data-am-gallery="{ pureview: true }" style="padding-bottom: 50px">
+				<li>
+					<div class="am-gallery-item">
+						<a href="images/patent/5/1.jpg"> <img
+							src="images/patent/5/1.jpg" class="am-img-responsive"
+							alt="高新技术企业" />
+							<h3 class="am-gallery-title">高新技术企业</h3>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="am-gallery-item">
+						<a href="images/patent/5/4.jpg"> <img
+							src="images/patent/5/4.jpg" class="am-img-responsive"
+							alt="深圳市科技进步奖" />
+							<h3 class="am-gallery-title">深圳市科技进步奖</h3>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="am-gallery-item">
+						<a href="images/patent/5/5.jpg"> <img
+							src="images/patent/5/5.jpg" class="am-img-responsive"
+							alt="环境保护科学技术奖" />
+							<h3 class="am-gallery-title">环境保护科学技术奖</h3>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="am-gallery-item">
+						<a href="images/patent/4/2.jpg"> <img
+							src="images/patent/4/2.jpg" class="am-img-responsive"
+							alt="广东省诚信企业" />
+							<h3 class="am-gallery-title">广东省诚信企业</h3>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<ul data-am-widget="gallery"
+				class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"
+				data-am-gallery="{ pureview: true }" style="padding-bottom: 50px">
+				<li>
+					<div class="am-gallery-item">
+						<a href="images/patent/2/1.jpg"> <img
+							src="images/patent/2/1.jpg" class="am-img-responsive"
+							alt="知识产权管理体系认证证书" />
+							<h3 class="am-gallery-title">知识产权管理体系认证证书</h3>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="am-gallery-item">
+						<a href="images/patent/2/3.jpg"> <img
+							src="images/patent/2/3.jpg" class="am-img-responsive"
+							alt="质量管理体系认证证书" />
+							<h3 class="am-gallery-title">质量管理体系认证证书</h3>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="am-gallery-item">
+						<a href="images/patent/2/4.jpg"> <img
+							src="images/patent/2/4.jpg" class="am-img-responsive"
+							alt="环境管理体系认证证书" />
+							<h3 class="am-gallery-title">环境管理体系认证证书</h3>
+						</a>
+					</div>
+				</li>
+				<li>
+					<div class="am-gallery-item">
+						<a href="images/patent/2/5.jpg"> <img
+							src="images/patent/2/5.jpg" class="am-img-responsive"
+							alt="能源管理体系认证证书" />
+							<h3 class="am-gallery-title">能源管理体系认证证书</h3>
+						</a>
+					</div>
+				</li>
+			</ul>
+			<div>
+				<a class="am-btn am-btn-secondary am-round" href="honor">查看更多</a>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="prod">
+		<div class="container">
+			<div>
+				<h2 class="section--title">产品中心</h2>
+			</div>
+			<div class="am-g">
+				<div class="am-u-md-5">
+					<img src="images/why.jpg" style="max-height: 120px" alt="why.jpg">
+				</div>
+				<div class="am-u-md-offset-7"></div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container am-text-center">
+			<div
+				style="background: url(images/圆圈.png) no-repeat 50% 50%; height: 575px;">
+				<div class="am-g">
+					<div class="am-u-sm-4">
+						<h1
+							style="padding-top: 145px; text-align: right; margin-right: 30px">国际领先水平</h1>
+						<h1
+							style="padding-top: 85px; text-align: right; margin-right: 100px">国家科技成果认定</h1>
+						<h1
+							style="padding-top: 100px; text-align: right; margin-right: 40px">工艺成熟产品性能稳定</h1>
+					</div>
+					<div class="am-u-sm-4">
+						<h1>完全自主知识产权</h1>
+						<p style="font-size: 3rem; color: #3689D5; margin-top: 180px">对于拥有核心</p>
+						<p style="font-size: 3rem; color: #3689D5">技术的我们来说</p>
+						<p style="font-size: 6rem; font-weight: bold; color: #3689D5">远不止这些</p>
+					</div>
+					<div class="am-u-sm-4">
+						<h1
+							style="padding-top: 145px; text-align: left; margin-left: 30px">可工业化批量生产</h1>
+						<h1 style="padding-top: 85px; margin-left: 50px">可整套工艺技术输出</h1>
+						<h1
+							style="padding-top: 100px; text-align: left; margin-left: 30px">适合功能性及装饰性行业镀金</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container am-text-center">
+			<div>
+				<h2 class="section--title">应用领域</h2>
+			</div>
+			<div class="product-model" style="height: 640px">
+				<div
+					style="background-image: url(images/prod/model/1.jpg); width: 255px; height: 353px; left: 0; top: 0;"
+					data-am-scrollspy="{animation: 'fade', delay: 100}">
+					<p>航空航天</p>
+				</div>
+				<div
+					style="background-image: url(images/prod/model/2.jpg); width: 345px; height: 159px; left: 260px; top: 0;"
+					data-am-scrollspy="{animation: 'fade', delay: 200}">
+					<p>电子元件</p>
+				</div>
+				<div
+					style="background-image: url(images/prod/model/7.jpg); width: 345px; height: 186px; left: 260px; top: 166px;"
+					data-am-scrollspy="{animation: 'fade', delay: 300}">
+					<p>钟表</p>
+				</div>
+				<div
+					style="background-image: url(images/prod/model/3.jpg); width: 300px; height: 295px; left: 610px; top: 0;"
+					data-am-scrollspy="{animation: 'fade', delay: 100}">
+					<p>军工产品</p>
+				</div>
+				<div
+					style="background-image: url(images/prod/model/8.jpg); width: 250px; height: 328px; left: 915px; top: 0;"
+					data-am-scrollspy="{animation: 'fade', delay: 200}">
+					<p>黄金饰品</p>
+				</div>
+				<div
+					style="background-image: url(images/prod/model/4.jpg); width: 604px; height: 239px; left: 0; top: 357px;"
+					data-am-scrollspy="{animation: 'fade', delay: 300}">
+					<p>礼品</p>
+				</div>
+				<div
+					style="background-image: url(images/prod/model/5.jpg); width: 300px; height: 296px; left: 610px; top: 300px;"
+					data-am-scrollspy="{animation: 'fade', delay: 100}">
+					<p>奢侈品</p>
+				</div>
+				<div
+					style="background-image: url(images/prod/model/6.jpg); width: 250px; height: 260px; left: 915px; top: 332px;"
+					data-am-scrollspy="{animation: 'fade', delay: 200}">
+					<p>五金卫浴</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" style="background-color: #E9E7E8">
+		<div class="container am-text-center">
+			<div>
+				<h2 class="section--title">合作伙伴</h2>
+			</div>
+		</div>
+	</div>
+	<div class="section"
+		style="background: url(images/合作伙伴.jpg) no-repeat; height: 350px; color: #fff">
+		<div class="container am-text-center">
+			<div class="am-g" style="font-size: 4rem; padding-top: 60px">
+				<div class="am-u-sm-4"
+					data-am-scrollspy="{animation: 'slide-bottom', delay: 200}">
+					<div class="diamond">
+						<div style="transform: rotate(-45deg); letter-spacing: 15px">周大福</div>
+					</div>
+				</div>
+				<div class="am-u-sm-4"
+					data-am-scrollspy="{animation: 'slide-bottom', delay: 300}">
+					<div class="diamond">
+						<div style="transform: rotate(-45deg)">国金黄金</div>
+					</div>
+				</div>
+				<div class="am-u-sm-4"
+					data-am-scrollspy="{animation: 'slide-bottom', delay: 400}">
+					<div class="diamond">
+						<div style="transform: rotate(-45deg)">东莞信泰</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container am-text-center">
+			<div>
+				<h2 class="section--title">新闻中心</h2>
+			</div>
+			<div class="index-news-type-btn">
+				<a href="javascript:void(0);" onclick="changeNewsType(1,'公司动态')"
+					class="am-btn am-btn-primary">公司动态</a> <a
+					href="javascript:void(0);" onclick="changeNewsType(2,'行业动态')"
+					class="am-btn am-btn-primary">行业动态</a>
+			</div>
+			<div class="am-g">
+				<div class="am-u-sm-3"
+					data-am-scrollspy="{animation: 'scale-up', delay: 300}">
+					<img src="images/news.jpg" class="am-img-responsive" alt="news.jpg">
+				</div>
+				<div class="am-u-sm-9">
+					<div data-am-widget="titlebar"
+						class="am-titlebar am-titlebar-default">
+						<h2 id="titlebarName" class="am-titlebar-title ">公司动态</h2>
+						<nav class="am-titlebar-nav">
+							<a href="/news">MORE+</a>
+						</nav>
+					</div>
+					<div id="newsList" class="am-g am-text-left"
+						style="padding: 20px 0">
+						<div id="newsListReplace">
+							<div class="am-u-sm-5 index-news-list-time">
+								<span> <strong
+									th:text="${#dates.format(firstNews.createTime, 'MM-dd')}">02-23</strong><br />
+									<span th:text="${#dates.format(firstNews.createTime, 'yyyy')}">2018</span>
+								</span>
+								<div>
+									<a th:href="'/news/'+${firstNews.id}">
+										<h3 th:text="${firstNews.title}">
+											新闻标题新闻标题新闻标题新闻标题新新闻标题新闻标题新闻标题新新闻标题新闻标题新</h3>
+									</a>
+									<div class="am-list-item-text index-news-list-hide"
+										th:text="${firstNews.summary}">
+										新闻摘要新闻摘要新闻摘要新闻摘要新新闻摘要新闻摘要新闻摘要新闻摘要</div>
+									<a class="am-btn am-btn-primary news-detail-btn"
+										th:if="${firstNews.id ne null}"
+										th:href="'/news/'+${firstNews.id}"> 查看详情 </a>
+								</div>
+							</div>
+							<div class="am-u-sm-7">
+								<ul class="am-list index-news-list">
+									<li th:each="news1 : ${newslist1}">
+										<div class="am-g index-news-list-time">
+											<div class="am-u-sm-3">
+												<strong
+													th:text="${#dates.format(news1.createTime, 'MM-dd')}">02-23</strong>
+												<br /> <span
+													th:text="${#dates.format(news1.createTime, 'yyyy')}">2018</span>
+											</div>
+											<div class="am-u-sm-9 index-news-list-title">
+												<a th:href="'/news/'+${news1.id}"><h3
+														th:text="${news1.title}">新闻标题新闻标题新闻标题新闻标题新</h3></a>
+												<div class="am-list-item-text index-news-list-hide"
+													th:text="${news1.summary}">新闻摘要新闻摘要新闻摘要新闻摘要新</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div th:replace="~{fragments/footer1 :: footer1}"></div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jump.js"></script>
+<script type="text/javascript">
+
+    function changeNewsType(typeid, titlebarName) {
+        document.getElementById('titlebarName').innerText = titlebarName;
+        $('.carousel').carousel();
+        $.ajax({
+            url: '/news/indexlist/' + typeid,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                $('#newsList').html(data);
+            },
+            error: function () {
+                alert("异常! 未能成功获取数据");
+            }
+        })
+
+    }
+    
+   
+   
+    /* $("#mou img").each(function(k,img){
+		new JumpObj(img,10);
+		//第一个参数代表元素对象
+		//第二个参数代表抖动幅度
+	}); */
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+.m-head {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    letter-spacing: 1px;
+}
+
+.m-head-phone {
+    line-height: 2.4rem;
+    height: 2.4rem;
+}
+
+.m-head-phone a {
+    color: #00A1E9;
+    text-decoration-line: none;
+}
+
+.m-head-title {
+    background-color: #00A1E9;
+    color: #fff;
+    padding: 3px;
+}
+
+.m-head-title b {
+    margin-left: 8px;
+    font-size: 15px;
+}
+
+.m-banner {
+    width: 100%;
+}
+
+.m-index-menu {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.m-index-menu a {
+    text-decoration-line: none;
+}
+
+.m-index-menu-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    color: #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding-top: 12px;
+}
+
+.m-index-menu-line {
+    width: 25px;
+    height: 5px;
+    margin: 0 auto;
+}
+
+.m-index-title {
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+
+.m-index-title-line {
+    width: 50px;
+    height: 5px;
+}
+
+.m-index-img-block {
+    letter-spacing: 2px;
+    color: white;
+    margin-top: 20px;
+}
+
+.m-index-img-block .col-xs-3 {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.m-index-cus {
+    margin-top: 15px;
+    height: 70px;
+}
+
+.m-index-cus .col-xs-4 div {
+    border: white 2px solid;
+    height: 50px;
+}
+
+.m-indent p {
+    text-indent: 2em;
+}
+
+.m-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #16C1F9;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+
+.m-news-img {
+    height: 80px;
+    width: 100%;
+}
+
+.m-news-title {
+    height: 57px;
+    display: block;
+}
+
+.m-honor-min-height div {
+    min-height: 500px;
+    vertical-align: middle;
+}
+
+.m-honor-min-height img {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media screen and (min-width: 600px) and (max-width: 760px) {
+    .m-news-img {
+        height: 138px;
+    }
+
+    .m-news-title {
+        height: 115px;
+        display: block;
+        font-size: x-large;
+    }
+}
+
+@media screen and (min-width: 761px) and (max-width: 900px) {
+    .m-news-img {
+        height: 160px;
+    }
+
+    .m-news-title {
+        height: 135px;
+        display: block;
+        font-size: x-large;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1024px) {
+    .m-news-img {
+        height: 190px;
+    }
+
+    .m-news-title {
+        height: 165px;
+        display: block;
+        font-size: x-large;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .m-news-img {
+        height: 240px;
+    }
+
+    .m-news-title {
+        height: 215px;
+        display: block;
+        font-size: x-large;
+    }
+}

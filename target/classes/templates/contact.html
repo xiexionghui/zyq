@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header1 :: header1}"></head>
+<body>
+<div class="index-page">
+    <img src="images/contact.jpg" class="am-img-responsive" alt=""/>
+</div>
+<div class="section">
+    <div class="container am-text-center">
+        <div id="ubomap" style="width: 100%;height: 500px"></div>
+    </div>
+</div>
+<div class="section">
+    <div class="container am-text-center">
+        <ul class="am-avg-sm-1 am-avg-md-3 am-avg-lg-3 am-thumbnails">
+            <li>
+                <div class="m-contact-infobox">
+                    <h3><em class="am-icon-map-marker am-icon-fw"></em>深圳市罗湖区翠竹北路水贝石化工业区3栋7楼</h3>
+                </div>
+            </li>
+            <li>
+                <div class="m-contact-infobox">
+                   <h3><em class="am-icon-phone am-icon-fw"></em>400-931-8081　0755-83701111转882</h3>
+                </div>
+            </li>
+            <li>
+                <div class="m-contact-infobox">
+                  <h3> <em class="am-icon-envelope-o am-icon-fw"></em>ubo@uboclub.cn</h3>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/amazeui.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=cYXXjtAGYNRnWQ5PVH1S6oiTQHYiHxya"></script>
+<script type="text/javascript">
+    var map = new BMap.Map("ubomap");
+    var point = new BMap.Point(114.132886, 22.581839);
+    map.centerAndZoom(point, 18);
+    map.enableScrollWheelZoom(true);
+    var opts = {type: BMAP_NAVIGATION_CONTROL_SMALL};
+    map.addControl(new BMap.NavigationControl(opts));
+    var markergg = new BMap.Marker(point, {offset: new BMap.Size(-7, 15)});
+    map.addOverlay(markergg);
+    var info = {
+        width: 270,
+        title: "<span class='iwTitle' title='联合蓝海黄金材料科技股份有限公司'>联合蓝海黄金材料科技股份有限公司</span>"
+    };
+    var infoWindow = new BMap.InfoWindow("<p class='iwContent'>地址：广东省深圳市罗湖区石化工业区3栋7楼<br>电话：400-931-8081　0755-83701111</p>", info);
+    map.openInfoWindow(infoWindow, map.getCenter());
+</script>
+</body>
+</html>

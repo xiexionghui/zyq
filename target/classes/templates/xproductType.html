@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header1 :: header1}"></head>
+<body>
+<div class="index-page">
+    <img src="../images/产品页面_02.jpg" class="am-img-responsive" alt=""/>
+</div>
+<div class="section">
+    <div class="container am-text-center" style="padding: 70px 0">
+        <div class="am-tabs" data-am-tabs>
+            <ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
+                <!--                <li><a href="#tab1">专利证书</a></li>-->
+                <li class="am-active"><a href="#tab2" >戒指</a></li><!-- th:href="/product/productType.html/1" -->
+                <li><a href="#tab3">项链</a></li>
+                <li><a href="#tab4">手镯</a></li>
+                <li><a href="#tab5">耳环</a></li>
+            </ul>
+
+            <div class="am-tabs-bd" style="padding: 20px 0">
+             
+                <div class="am-tab-panel am-fade am-in am-active" id="tab2">
+                    <ul data-am-widget="gallery"
+                        class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"
+                        data-am-gallery="{ pureview: false }">
+                        <!-- 产品类型1 start -->
+                        <li th:each="lst : ${list}">
+                            <div class="am-gallery-item">
+                                <a href="#" th:href="'/product/product.html/'+${lst.id}">
+                                    <img src="../images/patent/3/0001.jpg" th:src="${lst.productImages}" class="am-img-responsive" alt="找不到图片"/>
+                                    <h3 class="am-gallery-title">[[${lst.productName}]]</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- 产品类型1 end -->
+                        
+                    </ul>
+                </div>
+                <div class="am-tab-panel am-fade" id="tab3">
+                    <ul data-am-widget="gallery"
+                        class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"
+                        data-am-gallery="{ pureview: false }">
+                        <!-- 产品类型2 start -->
+                        <li th:each=" lst2 :${list2} ">
+                            <div class="am-gallery-item">
+                                <a href="#">
+                                    <img src="#" th:src="${lst2.productImages}" class="am-img-responsive" alt="无法加载图片"/>
+                                    <h3 class="am-gallery-title">[[${lst2.productName}]]</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- 产品类型2end -->
+                        
+                    </ul>
+                </div>
+                <div class="am-tab-panel am-fade" id="tab4">
+                    <ul data-am-widget="gallery"
+                        class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"
+                        data-am-gallery="{ pureview: false }">
+                        <!-- 产品类型3start -->
+                        <li th:each=" lst3: ${list3}">
+                            <div class="am-gallery-item">
+                                <a href="#">
+                                    <img src="#" th:src="${lst3.productImages}" class="am-img-responsive" alt="找不到图片"/>
+                                    <h3 class="am-gallery-title">[[${lst3.productName}]]</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- 产品类型3 end -->
+                        
+                    </ul>
+                </div>
+                <div class="am-tab-panel am-fade" id="tab5">
+                    <ul data-am-widget="gallery"
+                        class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"
+                        data-am-gallery="{ pureview: false }">
+                        <!-- 产品类型4 start -->
+                        <li th:each=" lst4: ${list4} ">
+                        	
+                            <div class="am-gallery-item">
+                                <a href="#">
+                                    <img src="#" th:src="${lst4.productImages}" class="am-img-responsive"
+                                         alt="找不到图片"/>
+                                    <h3 class="am-gallery-title">[[${lst4.productName}]]</h3>
+                                </a>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer1 :: footer1}"></div>
+</body>
+</html>

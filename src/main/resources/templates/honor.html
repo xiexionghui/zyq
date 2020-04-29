@@ -1,0 +1,321 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header1 :: header1}"></head>
+<body>
+<div class="index-page">
+    <img src="images/honor.jpg" class="am-img-responsive" alt=""/>
+</div>
+<div class="section">
+    <div class="container am-text-center" style="padding: 70px 0">
+        <div class="am-tabs" data-am-tabs>
+            <ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
+                <!--                <li><a href="#tab1">专利证书</a></li>-->
+                <li class="am-active"><a href="#tab2">检测报告</a></li>
+                <li><a href="#tab3">科技成果</a></li>
+                <li><a href="#tab4">荣誉资质</a></li>
+                <li><a href="#tab5">管理体系</a></li>
+            </ul>
+
+            <div class="am-tabs-bd" style="padding: 20px 0">
+                <!--                <div class="am-tab-panel am-fade am-in am-active" id="tab1">-->
+                <!--                    <ul data-am-widget="gallery"-->
+                <!--                        class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"-->
+                <!--                        data-am-gallery="{ pureview: true }">-->
+                <!--                        <li>-->
+                <!--                            <div class="am-gallery-item">-->
+                <!--                                <a href="images/patent/1/专利6&#45;&#45;一种无氰亚硫酸盐镀金液及其应用.jpg">-->
+                <!--                                    <img src="images/patent/1/专利6&#45;&#45;一种无氰亚硫酸盐镀金液及其应用.jpg" class="am-img-responsive"-->
+                <!--                                         alt="一种无氰亚硫酸盐镀金液及其应用"/>-->
+                <!--                                    <h3 class="am-gallery-title">一种无氰亚硫酸盐镀金液及其应用</h3>-->
+                <!--                                </a>-->
+                <!--                            </div>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <div class="am-gallery-item">-->
+                <!--                                <a href="images/patent/1/专利4：一种黄金饰品的制备方法.jpg">-->
+                <!--                                    <img src="images/patent/1/专利4：一种黄金饰品的制备方法.jpg" class="am-img-responsive" alt="一种黄金饰品的制备方法"/>-->
+                <!--                                    <h3 class="am-gallery-title">一种黄金饰品的制备方法</h3>-->
+                <!--                                </a>-->
+                <!--                            </div>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <div class="am-gallery-item">-->
+                <!--                                <a href="images/patent/1/专利7：一种黄金制品及其制备方法.jpg">-->
+                <!--                                    <img src="images/patent/1/专利7：一种黄金制品及其制备方法.jpg" class="am-img-responsive"-->
+                <!--                                         alt="一种黄金制品及其制备方法"/>-->
+                <!--                                    <h3 class="am-gallery-title">一种黄金制品及其制备方法</h3>-->
+                <!--                                </a>-->
+                <!--                            </div>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <div class="am-gallery-item">-->
+                <!--                                <a href="images/patent/1/专利5：改性无氰镀金液及其应用和硬质黄金的制备方法.jpg">-->
+                <!--                                    <img src="images/patent/1/专利5：改性无氰镀金液及其应用和硬质黄金的制备方法.jpg" class="am-img-responsive"-->
+                <!--                                         alt="改性无氰镀金液及其应用和硬质黄金的制备方法"/>-->
+                <!--                                    <h3 class="am-gallery-title">改性无氰镀金液及其应用和硬质黄金的制备方法</h3>-->
+                <!--                                </a>-->
+                <!--                            </div>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <div class="am-gallery-item">-->
+                <!--                                <a href="images/patent/1/专利1：一种无氰电镀液及其应用.jpg">-->
+                <!--                                    <img src="images/patent/1/专利1：一种无氰电镀液及其应用.jpg" class="am-img-responsive" alt="一种无氰电镀液及其应用"/>-->
+                <!--                                    <h3 class="am-gallery-title">一种无氰电镀液及其应用</h3>-->
+                <!--                                </a>-->
+                <!--                            </div>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <div class="am-gallery-item">-->
+                <!--                                <a href="images/patent/1/专利2：一种电镀黄金和硬质黄金的制备方法.jpg">-->
+                <!--                                    <img src="images/patent/1/专利2：一种电镀黄金和硬质黄金的制备方法.jpg" class="am-img-responsive" alt="一种电镀黄金和硬质黄金的制备方法"/>-->
+                <!--                                    <h3 class="am-gallery-title">一种电镀黄金和硬质黄金的制备方法</h3>-->
+                <!--                                </a>-->
+                <!--                            </div>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <div class="am-gallery-item">-->
+                <!--                                <a href="images/patent/1/专利3：一种硬化剂.jpg">-->
+                <!--                                    <img src="images/patent/1/专利3：一种硬化剂.jpg" class="am-img-responsive" alt="一种硬化剂"/>-->
+                <!--                                    <h3 class="am-gallery-title">一种硬化剂</h3>-->
+                <!--                                </a>-->
+                <!--                            </div>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <div class="am-gallery-item">-->
+                <!--                                <a href="images/patent/1/专利8：一种无氰镀金液及其制备方法&#45;&#45;国防专利.jpg">-->
+                <!--                                    <img src="images/patent/1/专利8：一种无氰镀金液及其制备方法&#45;&#45;国防专利.jpg" class="am-img-responsive" alt="一种无氰镀金液及其制备方法&#45;&#45;国防专利"/>-->
+                <!--                                    <h3 class="am-gallery-title">一种无氰镀金液及其制备方法&#45;&#45;国防专利</h3>-->
+                <!--                                </a>-->
+                <!--                            </div>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <div class="am-gallery-item">-->
+                <!--                                <a href="images/patent/1/OSG48869UBN-36738-新加坡证书_39054.jpg">-->
+                <!--                                    <img src="images/patent/1/OSG48869UBN-36738-新加坡证书_39054.jpg"-->
+                <!--                                         class="am-img-responsive" alt="国际专利-1"/>-->
+                <!--                                    <h3 class="am-gallery-title">国际专利-1</h3>-->
+                <!--                                </a>-->
+                <!--                            </div>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+                <!--                </div>-->
+                <div class="am-tab-panel am-fade am-in am-active" id="tab2">
+                    <ul data-am-widget="gallery"
+                        class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"
+                        data-am-gallery="{ pureview: true }">
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/3/0001.jpg">
+                                    <img src="images/patent/3/0001.jpg" class="am-img-responsive" alt="EBO无氰镀金液检测"/>
+                                    <h3 class="am-gallery-title">EBO无氰镀金液检测-1</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/3/0002.jpg">
+                                    <img src="images/patent/3/0002.jpg" class="am-img-responsive" alt="EBO无氰镀金液检测"/>
+                                    <h3 class="am-gallery-title">EBO无氰镀金液检测-2</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/3/0003.jpg">
+                                    <img src="images/patent/3/0003.jpg" class="am-img-responsive" alt="EBO无氰镀金液检测"/>
+                                    <h3 class="am-gallery-title">EBO无氰镀金液检测-3</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/3/0004.jpg">
+                                    <img src="images/patent/3/0004.jpg" class="am-img-responsive" alt="EBO无氰镀金液检测"/>
+                                    <h3 class="am-gallery-title">EBO无氰镀金液检测-4</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/3/中科院无氰镀液检测-1.jpg">
+                                    <img src="images/patent/3/中科院无氰镀液检测-1.jpg" class="am-img-responsive" alt="中科院无氰镀液检测"/>
+                                    <h3 class="am-gallery-title">中科院无氰镀液检测</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/3/中科院无氰镀液检测-2.jpg">
+                                    <img src="images/patent/3/中科院无氰镀液检测-2.jpg" class="am-img-responsive" alt="中科院无氰镀液检测"/>
+                                    <h3 class="am-gallery-title">中科院无氰镀液检测</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/3/中科院有害物质检测-1.jpg">
+                                    <img src="images/patent/3/中科院有害物质检测-1.jpg" class="am-img-responsive" alt="中科院有害物质检测"/>
+                                    <h3 class="am-gallery-title">中科院有害物质检测</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/3/中科院有害物质检测-2.jpg">
+                                    <img src="images/patent/3/中科院有害物质检测-2.jpg" class="am-img-responsive" alt="中科院有害物质检测"/>
+                                    <h3 class="am-gallery-title">中科院有害物质检测</h3>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="am-tab-panel am-fade" id="tab3">
+                    <ul data-am-widget="gallery"
+                        class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"
+                        data-am-gallery="{ pureview: true }">
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/5/2.jpg">
+                                    <img src="images/patent/5/2.jpg" class="am-img-responsive" alt="一种硬化剂"/>
+                                    <h3 class="am-gallery-title">一种硬化剂</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/5/3.jpg">
+                                    <img src="images/patent/5/3.jpg" class="am-img-responsive"
+                                         alt="一种改性无氰镀金液及其应用和硬质黄金的制备方法"/>
+                                    <h3 class="am-gallery-title">一种改性无氰镀金液及其应用和硬质黄金的制备方法</h3>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="am-tab-panel am-fade" id="tab4">
+                    <ul data-am-widget="gallery"
+                        class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"
+                        data-am-gallery="{ pureview: true }">
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/5/001.jpg">
+                                    <img src="images/patent/5/001.jpg" class="am-img-responsive" alt="国家级高新技术企业"/>
+                                    <h3 class="am-gallery-title">国家级高新技术企业</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/5/1.jpg">
+                                    <img src="images/patent/5/1.jpg" class="am-img-responsive" alt="深圳市高新技术企业"/>
+                                    <h3 class="am-gallery-title">深圳市高新技术企业</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/5/4.jpg">
+                                    <img src="images/patent/5/4.jpg" class="am-img-responsive" alt="深圳市科技进步奖"/>
+                                    <h3 class="am-gallery-title">深圳市科技进步奖</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/5/5.jpg">
+                                    <img src="images/patent/5/5.jpg" class="am-img-responsive" alt="环境保护科学技术奖"/>
+                                    <h3 class="am-gallery-title">环境保护科学技术奖</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/4/3.jpg">
+                                    <img src="images/patent/4/3.jpg" class="am-img-responsive" alt="创新型企业"/>
+                                    <h3 class="am-gallery-title">创新型企业</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/4/4.jpg">
+                                    <img src="images/patent/4/4.jpg" class="am-img-responsive" alt="2015年JNA年度创新企业-制造业-科技应用奖"/>
+                                    <h3 class="am-gallery-title">2015年JNA年度创新企业-制造业-科技应用奖</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/4/7.jpg">
+                                    <img src="images/patent/4/7.jpg" class="am-img-responsive" alt="中国表面工程协会科学技术奖"/>
+                                    <h3 class="am-gallery-title">中国表面工程协会科学技术奖</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/4/8.jpg">
+                                    <img src="images/patent/4/8.jpg" class="am-img-responsive" alt="中检溯源实地验证证书"/>
+                                    <h3 class="am-gallery-title">中检溯源实地验证证书</h3>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="am-tab-panel am-fade" id="tab5">
+                    <ul data-am-widget="gallery"
+                        class="am-gallery am-avg-sm-2 am-avg-md-4 am-avg-lg-4 am-gallery-default"
+                        data-am-gallery="{ pureview: true }">
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/2/1.jpg">
+                                    <img src="images/patent/2/1.jpg" class="am-img-responsive"
+                                         alt="．．．"/>
+                                    <h3 class="am-gallery-title">　</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/2/2.jpg">
+                                    <img src="images/patent/2/2.jpg" class="am-img-responsive" alt="．．．"/>
+                                    <h3 class="am-gallery-title">　</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/2/3.jpg">
+                                    <img src="images/patent/2/3.jpg" class="am-img-responsive"
+                                         alt="．．．"/>
+                                    <h3 class="am-gallery-title">　</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/2/4.jpg">
+                                    <img src="images/patent/2/4.jpg" class="am-img-responsive"
+                                         alt="．．．"/>
+                                    <h3 class="am-gallery-title">　</h3>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="am-gallery-item">
+                                <a href="images/patent/2/5.jpg">
+                                    <img src="images/patent/2/5.jpg" class="am-img-responsive"
+                                         alt="．．．"/>
+                                    <h3 class="am-gallery-title">　</h3>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/footer1 :: footer1}"></div>
+</body>
+</html>

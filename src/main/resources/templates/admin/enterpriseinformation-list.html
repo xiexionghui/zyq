@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="alternate icon" type="image/png" th:href="@{../images/logo/favicon.png}">
+    <link rel="stylesheet" href="layui/css/layui.css" th:href="@{../layui/css/layui.css}">
+    <link rel="stylesheet" href="css/admin.css" th:href="@{../css/admin.css}">
+    <title>管理后台</title>
+</head>
+<body class="frame-body">
+<div>
+    <table id="demo" lay-size="sm" lay-filter="dt1"></table>
+</div>
+<!--  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a> -->
+<script type="text/html" id="barDemo">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+   
+</script>
+
+<script type="text/javascript" th:src="@{../layui/layui.js}" src="layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['layer', 'table'], function () {
+        var layer = layui.layer, table = layui.table, $ = layui.$;
+        table.render({
+            elem: '#demo'
+            , url: '/management/Enter/getEnterpriseinformationTable'
+            , page: true
+            , limit: 15
+            ,done:function(res,curr,count){
+                hoverOpenImg();//显示大图
+                $('table tr').on('click',function(){
+                     $('table tr').css('background','');
+                     $(this).css('background','<%=PropKit.use("config.properties").get("table_color")%>');
+                 });
+            }
+            , toolbar: '#toolbarDemo'
+            , id: "newsTable"
+            , cols: [
+                [
+                    {field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'},
+                    {field: 'browserTitle', title: '浏览器标题'},
+                    {field: 'subHeading', title: '副标题'},
+                    {field: 'serviceRe', title: '服务热线'},
+                    {field: 'bottomServiceHotline', title: '底部服务热线'},
+                    {field: 'companyaddress', title: '公司地址'},
+                    {field: 'companyEmail', title: '公司邮箱'},
+                    {field: 'logo', title: '图片1',align: 'center',sort:false,
+                        templet:function(d) {
+                            return '<div οnclick="photograph(this)"><img src='+d.logo+'></div>'
+                        }},
+                    {field: 'logotwo', title: '图片2',align: 'center',sort:false,
+                            templet:function(d) {
+                                return '<div οnclick="photograph(this)"><img src='+d.logotwo+'></div>'
+                            }
+                    },
+                    {title: '操作', fixed: 'right', width: 150, align: 'center', toolbar: '#barDemo'}
+                ]
+            ]
+        });
+
+        //监听工具条
+        table.on('tool(dt1)', function (obj) {
+            var rowdata = obj.data; //获得当前行数据
+            var layEvent = obj.event;
+
+            if (layEvent === 'edit') {
+                layer.open({
+                    type: 2,
+                    content: '/management/Enter/event/' + rowdata.id,
+                    area: ['1024px', '768px']
+                });
+            } else if (layEvent === 'del') {
+                layer.confirm('是否确认删除?', function (index) {
+                    layer.close(index);
+                    $.ajax({
+                        url: '/management/News/delNews',
+                        type: 'POST',
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify(rowdata),
+                        success: function (data) {
+                            if (data.success) {
+                                layer.msg("删除完成");
+                                obj.del();
+                            } else {
+                                layer.msg("删除出错");
+                            }
+                        },
+                        error: function () {
+                            layer.msg("异常!未能成功提交请求!");
+                        }
+                    })
+                });
+            }
+        });
+
+        //监听事件
+        table.on('toolbar(dt1)', function (obj) {
+            switch (obj.event) {
+                case 'add':
+                    layer.open({
+                        type: 2,
+                        content: '/management/News/edit/-1',
+                        area: ['1024px', '768px']
+                    });
+                    break;
+                case 'delete':
+                    layer.msg('删除');
+                    break;
+                case 'update':
+                    layer.msg('编辑');
+                    break;
+            }
+        });
+
+        function createTime(v) {
+            var date = new Date(v);
+            var y = date.getFullYear();
+            var m = date.getMonth() + 1;
+            m = m < 10 ? '0' + m : m;
+            var d = date.getDate();
+            d = d < 10 ? ("0" + d) : d;
+            var h = date.getHours();
+            h = h < 10 ? ("0" + h) : h;
+            var M = date.getMinutes();
+            M = M < 10 ? ("0" + M) : M;
+            var str = y + "-" + m + "-" + d + " " + h + ":" + M;
+            return str;
+        }
+
+        function hoverOpenImg(){
+            var img_show = null; // tips提示
+            $('td img').hover(function(){
+                //alert($(this).attr('src'));
+                var img = "<img class='img_msg' src='"+$(this).attr('src')+"' style='width:130px;' />";
+                img_show = layer.tips(img, this,{
+                    tips:[2, 'rgba(41,41,41,.5)']
+                    ,area: ['160px']
+                });
+            },function(){
+                layer.close(img_show);
+            });
+            $('td img').attr('style','max-width:100%');
+        }
+
+    });
+</script>
+</body>
+</html>

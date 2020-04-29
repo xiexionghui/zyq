@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header1 :: header1}"></head>
+
+<body>
+	<div id="bd" style="background-color: #f7f7f7; padding-bottom: 1px;">
+
+
+
+		<div class="wp">
+			<div class="m-cont1">
+				<div class="pic">
+					<img src="" th:src="${contactus.images}" alt="图片无法加载">
+				</div>
+				<ul class="s-list8">
+					<li>
+						<h4>联系方式</h4>
+						<p style="white-space: normal;" class="spec">
+							<strong>客户服务热线：</strong><br>
+							[[${contactus.customerServiceHotline}]]<br>
+						</p>
+						<p style="white-space: normal;" class="spec">
+							<strong>一般查询：</strong><br>
+							<a href="http://www.ubogt.com/">[[${contactus.generalQuery}]]</a>
+						</p>
+						<p>
+							<strong>地址：</strong><br>[[${contactus.address}]]
+						</p>
+					</li>
+					<li>
+						<!-- <h4>其他查询</h4> -->
+						<p style="white-space: normal;" class="spec">
+							<strong>企业邮箱：</strong><br>[[${contactus.enterpriseMailbox}]]
+						</p>
+						<p style="white-space: normal;" class="spec">
+							<strong>媒体查询：</strong>&nbsp;<br>
+							<a href="/lianxi">[[${contactus.mediaQuery}]]</a>
+						</p>
+						<p style="white-space: normal;" class="nm">
+							<strong>企业礼品查询<strong style="white-space: normal;">：</strong></strong>
+						</p>
+						<p style="white-space: normal;" class="nm">联络电话：[[${contactus.contactTelephoneNumber}]]</p>
+						<p style="white-space: normal;" class="nm">业务QQ：[[${contactus.businessQQ}]]</p>
+						<p style="white-space: normal;" class="nm">
+							电邮：<a href="mailto:ctfcsd@ctf.com.cn">[[${contactus.Email}]]</a>
+						</p>
+					</li>
+				</ul>
+				
+				
+				<div class="section">
+					<div class="container am-text-center">
+						<div id="ubomap" style="width: 100%; height: 500px;margin-left: -200px;"></div>
+					</div>
+		</div>
+			</div>
+			
+				
+			
+		</div>
+		
+		<div th:replace="~{fragments/footer1 :: footer1}"></div>
+	</div>
+
+			
+
+
+
+			<script src="js/jquery.min.js"></script>
+			<script src="js/amazeui.js"></script>
+			<script type="text/javascript"
+				src="http://api.map.baidu.com/api?v=2.0&ak=cYXXjtAGYNRnWQ5PVH1S6oiTQHYiHxya"></script>
+			<script type="text/javascript">
+    var map = new BMap.Map("ubomap");
+    var point = new BMap.Point(114.132886, 22.581839);
+    map.centerAndZoom(point, 18);
+    map.enableScrollWheelZoom(true);
+    var opts = {type: BMAP_NAVIGATION_CONTROL_SMALL};
+    map.addControl(new BMap.NavigationControl(opts));
+    var markergg = new BMap.Marker(point, {offset: new BMap.Size(-7, 15)});
+    map.addOverlay(markergg);
+    var info = {
+        width: 270,
+        title: "<span class='iwTitle' title='联合蓝海黄金材料科技股份有限公司'>联合蓝海黄金材料科技股份有限公司</span>"
+    };
+    var infoWindow = new BMap.InfoWindow("<p class='iwContent'>地址：广东省深圳市罗湖区石化工业区3栋7楼<br>电话：400-931-8081　0755-83701111</p>", info);
+    map.openInfoWindow(infoWindow, map.getCenter());
+</script>
+</body>
+</html>

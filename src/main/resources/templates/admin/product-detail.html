@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="alternate icon" type="image/png" th:href="@{../../images/logo/favicon.png}">
+    <link rel="stylesheet" href="layui/css/layui.css" th:href="@{../../layui/css/layui.css}">
+    <link rel="stylesheet" href="css/admin.css" th:href="@{../../css/admin.css}">
+    <title>管理后台</title>
+    <style>
+        .layui-layer-page .layui-layer-content {
+            position: relative;
+            overflow: visible !important;
+        }
+    </style>
+</head>
+<body class="frame-body">
+<div class="layui-form">
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">产品名称</label>
+            <div class="layui-input-block">
+                <input type="text" name="productName" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline">
+            <label class="layui-form-label">产品类别</label>
+            <div class="layui-input-block">
+                <select name="cateId" lay-filter="cateId">
+                    <option value=""></option>
+                    <option th:each="cate,cateIdx:${cateSelectList}" th:value="${cate.cateId}"
+                            th:text="${cate.cateName}"></option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-inline">
+            <button class="layui-btn layui-btn-sm" lay-submit lay-filter="select1">查询</button>
+        </div>
+    </div>
+    
+</div>
+<hr class="layui-bg-green">
+<table id="productTable" lay-filter="productTable"></table>
+<script type="text/html" id="headTool">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm layui-btn-normal" lay-event="add">添加</button>
+    </div>
+</script>
+<script type="text/html" id="bar2">
+    <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">作废</a>
+</script>
+<script type="text/javascript" th:src="@{../../layui/layui.js}" src="layui/layui.js"></script>
+<script type="text/javascript">
+    layui.use(['layer', 'table', 'form'], function () {
+        var layer = layui.layer, table = layui.table, form = layui.form, $ = layui.$;
+
+        table.render({
+            elem: '#productTable'
+            , url: '/management/product/getProductDetailTable'
+            , page: true
+            , limit: 10
+            , limits: [10, 20]
+            , id: "productTable"
+            , toolbar: '#headTool'
+            , cols: [
+                [
+                    {field: 'cateText', title: '类别名称', edit: 'text', width: 200},
+                    {field: 'productName', title: '产品名称', edit: 'text', width: 360},
+                    {field: 'productDesc', title: '产品简述', edit: 'text'},
+                    {title: '操作', width: 180, align: 'center', toolbar: '#bar2'}
+                ]
+            ]
+        });
+
+        table.on('toolbar(productTable)', function (obj) {
+            if (obj.event === 'add') {
+                layer.open({
+                    type: 2,
+                    area: ['1100px', '90%'],
+                    title: "编辑产品信息",
+                    content: "/management/product/productFrame"
+                });
+            }
+        });
+
+        table.on('tool(productTable)', function (obj) {
+            if (obj.event === 'edit') {
+                layer.open({
+                    type: 2,
+                    area: ['1100px', '90%'],
+                    title: "编辑产品信息",
+                    content: "/management/product/productFrame?productId=" + obj.data.productId
+                });
+            } else if (obj.event === 'del') {
+                layer.confirm('是否确定作废?', {icon: 3, title: '提示'}, function (index) {
+                    var data = obj.data;
+                    data['active'] = false;
+                    $.ajax({
+                        url: "/management/product/invalidProduct",
+                        type: "POST",
+                        dataType: 'json',
+                        contentType: "application/json;charset=utf-8",
+                        data: JSON.stringify(data),
+                        success: function (res) {
+                            layer.msg(res.message);
+                            if (res.success) {
+                                obj.del()
+                            }
+                        },
+                        error: function (e) {
+                            layer.msg("ERROR:" + e.status + "," + e.responseText);
+                        }
+                    });
+
+                    layer.close(index);
+                });
+
+            }
+        });
+
+        form.on('submit(select1)', function (data) {
+            table.reload('productTable', {
+                where: data.field,
+                page: {curr: 1}
+            });
+
+            layer.msg("查询完成", {icon: 1, time: 1500})
+        });
+    })
+</script>
+</body>
+</html>

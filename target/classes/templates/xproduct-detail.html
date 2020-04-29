@@ -1,0 +1,102 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/header1 :: header1}">
+
+</head>
+<link rel="stylesheet" th:href="@{/css/productdetail.css}">
+
+<body>
+
+
+	<div id="bd">
+		<!-- 选项start -->
+		<div class="g-cur">
+			<div class="wp">
+				<a href="/index">首页</a><em>&gt;</em> <a href="/product/productType">产品中心</a><em>&gt;</em>
+				<a href="#" th:href="'/product/product.html/'+${product.id}">产品详情</a><em>&gt;</em> <a
+					href="/zh-hans/jewelry/necklace/index.html"></a>
+			</div>
+		</div>
+		<!-- 选项end -->
+		<div class="wp">
+			<div class="m-pro2">
+				<div class="pro-p">
+					<div class="slider one-time slick-initialized slick-slider">
+
+						<div aria-live="polite" class="slick-list draggable"
+							style="height: 340px;">
+							<div class="slick-track" role="listbox"
+								style="opacity: 1; width: 340px; transform: translate3d(0px, 0px, 0px);">
+								<div class="slick-slide slick-current slick-active"
+									data-slick-index="0" aria-hidden="false" tabindex="-1"
+									role="option" aria-describedby="slick-slide00"
+									style="width: 340px;">
+									<a href="#" class="pic" tabindex="0"> <img
+										src="" alt="无法加载图片" th:src="${product.productImages}" 
+										class="cloudzoom"
+										data-cloudzoom="zoomImage: '/upload/2020/0102/1312f4l00d.jpg'"
+										data-bd-imgshare-binded="1">
+									</a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="pro-t">
+					<div class="tit"></div>
+					<h2>[[${product.productName}]]</h2>
+					<p></p>
+					
+				</div>
+			</div>
+			<div class="m-pro3">
+				<h4>产品描述</h4>
+				<div class="con">
+					<span style="color:#040404;margin-top:54px">产品编号 <strong>:</strong> <strong>[[${product.id}]]</strong></span><br> 
+					<div word-wrap: break-word;white-space : normal><span style="color:#040404">产品介绍:<strong><pre>[[${product.productSeries}]]</pre></strong></span></div>
+				</div>
+			</div>
+			<ul class="s-list4">
+
+			</ul>
+			<div class="m-tit-1">
+				<span>其他推荐</span>
+			</div>
+			<ul class="s-list5 skrollable skrollable-between"
+				data-top-bottom="transform: translateY(-200px);"
+				data-bottom="transform: translateY(0px);"
+				style="transform: translateY(-15.0424px);">
+
+
+
+				<li th:each=" listProduct : ${listProduct}"><a href="#" th:href="'/product/product.html/'+${listProduct.id}"
+					class="con">
+						<div class="pic">
+							<img src="" th:src="${listProduct.productImages}"
+								data-bd-imgshare-binded="1">
+						</div>
+						<h4>[[${listProduct.productName}]]</h4>
+						<p>[[${listProduct.id}]]</p>
+				</a></li>
+
+			</ul>
+		</div>
+		<!-- 详情信息start -->
+	</div>
+
+
+	<div th:replace="~{fragments/footer1 :: footer1}"></div>
+	<script>
+		$('#prod-tab').find('a').on('open.tabs.amui', function(e) {
+			console.log('[%s] 选项卡打开了', $(this).text());
+		});
+		$('.am-thumbnail img').hover(function() {
+			$(this).addClass('am-animation-scale-down');
+		}, function() {
+			$(this).removeClass('am-animation-scale-down');
+		})
+	</script>
+</body>
+</html>

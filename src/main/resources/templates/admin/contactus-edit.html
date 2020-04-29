@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="alternate icon" type="image/png"
+	th:href="@{../../../images/logo/favicon.png}">
+<link rel="stylesheet" href="layui/css/layui.css"
+	th:href="@{../../../layui/css/layui.css}">
+<link rel="stylesheet" href="css/admin.css"
+	th:href="@{../../../css/admin.css}">
+<style type="text/css">
+.toolbar {
+	border: 1px solid #ccc;
+}
+
+.text {
+	border: 1px solid #ccc;
+	min-height: 400px;
+}
+</style>
+<title>管理后台</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<!-- enterPriseinFormation -->
+<body class="frame-body">
+		<div class="layui-col-xs3" style="text-align: center">
+			<div>
+				<img id="images" src="/images/news.jpg"
+					th:src="${#strings.isEmpty(us.images)?'/images/bg_upload.jpg':us.images}"
+					width="120" height="160">
+			</div>
+			<div style="padding: 5px">
+				<button class="layui-btn layui-btn-xs" id="uploadImg">上传主图</button>
+			</div>
+			<div>
+				<small style="color: #FF5722">请上传像素为644×475</small>
+			</div>
+		</div>
+	<form class="layui-form">
+
+
+		<div class="layui-form-item">
+			<input type="hidden" name="id" th:value="${us.id}" id="id"> <!-- <label
+				class="layui-form-label">图片</label>
+			<div class="layui-input-block">
+				<input type="text" name="images" required lay-verify="required"
+					placeholder="请插入图片" th:value="${us.images}" autocomplete="off"
+					class="layui-input" id="images">
+			</div> -->
+		</div>
+
+		
+
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">客户服务热线</label>
+			<div class="layui-input-block">
+				<input type="text" name="customerServiceHotline" required
+					lay-verify="required" placeholder="请输入客户服务热线"
+					th:value="${us.customerServiceHotline}" autocomplete="off"
+					class="layui-input" id="customerServiceHotline">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">一般查询</label>
+			<div class="layui-input-block">
+				<input type="text" name="generalQuery" required
+					lay-verify="required" placeholder="请输入一般查询"
+					th:value="${us.generalQuery}" autocomplete="off"
+					class="layui-input" id="generalQuery">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">地址</label>
+			<div class="layui-input-block">
+				<input type="text" name="address" required lay-verify="required"
+					placeholder="请输入地址" th:value="${us.address}" autocomplete="off"
+					class="layui-input" id="address">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">企业邮箱</label>
+			<div class="layui-input-block">
+				<input type="text" name="enterpriseMailbox" required
+					lay-verify="required" placeholder="请输入企业邮箱"
+					th:value="${us.enterpriseMailbox}" autocomplete="off"
+					class="layui-input" id="enterpriseMailbox">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">媒体查询</label>
+			<div class="layui-input-block">
+				<input type="text" name="mediaQuery" required lay-verify="required"
+					placeholder="请输入媒体查询" th:value="${us.mediaQuery}"
+					autocomplete="off" class="layui-input" id="mediaQuery">
+			</div>
+		</div>
+
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">业务QQ</label>
+			<div class="layui-input-block">
+				<input type="text" name="businessQQ" required lay-verify="required"
+					placeholder="请输入业务QQ" th:value="${us.businessQQ}"
+					autocomplete="off" class="layui-input" id="businessQQ">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">联络电话</label>
+			<div class="layui-input-block">
+				<input type="text" name="contactTelephoneNumber" required
+					lay-verify="required" placeholder="请输入联络电话"
+					th:value="${us.contactTelephoneNumber}" autocomplete="off"
+					class="layui-input" id="contactTelephoneNumber">
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">电邮</label>
+			<div class="layui-input-block">
+				<input type="text" name="email" required lay-verify="required"
+					placeholder="请输入电邮" th:value="${us.email}" autocomplete="off"
+					class="layui-input" id="email">
+			</div>
+		</div>
+
+
+
+
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<a href="javascript:void(0);" class="layui-btn" id="submitenter">确定修改</a>
+			</div>
+		</div>
+
+	</form>
+	<div style="padding: 5px 0; color: #ccc"></div>
+
+
+	<script type="text/javascript" th:src="@{../../../js/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{../../../layui/layui.js}"
+		src="layui/layui.js"></script>
+	<script type="text/javascript" th:src="@{../../../js/main.js}"></script>
+	<script type="text/javascript" th:src="@{../../../js/wangEditor.js}"></script>
+<script type="text/javascript">
+
+
+			layui.use(['layer', 'upload', 'form'], function () {
+			    var layer = layui.layer, form = layui.form, upload = layui.upload, $ = layui.$;
+    
+			    
+			    var uploadInst = upload.render({
+				    elem: '#uploadImg'
+				    , url: "/management/contact/uploadProductImgFirst"
+				    , before: function (obj) {
+				        layer.load();
+				    }
+				    , done: function (res) {
+				        layer.closeAll('loading');
+				        layer.msg(res.msg);
+				        if (res.code === 0) {
+				            $('#images').attr('src', res.data);
+				        }
+				    }
+				    , error: function () {
+				        layer.closeAll('loading');
+				        layer.msg("上传失败")
+				    }
+				});
+			    
+			});
+
+
+			$("#submitenter").click(function () {
+			    $.ajax({
+			        url: '/management/contact/editContact/save',
+			        type: 'POST',
+			        contentType: "application/json; charset=utf-8",
+			        data: JSON.stringify({
+			            "id": $('#id').val(),
+			            "images": $("#images").attr("src"),
+			            "customerServiceHotline": $('#customerServiceHotline').val(),
+			            "generalQuery": $('#generalQuery').val(),
+			            "address": $('#address').val(),
+			            "enterpriseMailbox": $('#enterpriseMailbox').val(),
+			            "mediaQuery": $('#mediaQuery').val(),
+			            "contactTelephoneNumber": $('#contactTelephoneNumber').val(),
+			            "businessQQ": $('#businessQQ').val(),
+			            "email": $('#email').val()
+			            
+			        }),  
+			        
+			        success: function (data) {
+			        	 if (data.success) {
+			                 var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+			                 parent.layer.close(index); //再执行关闭
+			                 parent.layui.table.reload("contactusTable");
+			                 parent.layer.msg(data.message);
+			             } else {
+			                 layer.msg(data.message);
+			             }
+			        },
+			        error: function () {
+			            layer.msg("异常!未能成功提交!");
+			        }
+			    })
+			}); 
+			
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,256 @@
+.g-cur {
+    border-top: 1px solid #efefef;
+    height: 44px;
+    line-height: 44px;
+}
+
+.m-pro2 {
+    font-family: "pingfang";
+    padding-bottom: 20px;
+    margin: 35px 0 52px;
+}
+
+.m-pro3 {
+    padding: 44px 38px 60px;
+    background-color: #ffffff;
+    margin-bottom: 26px;
+}
+
+.s-list4 {
+    overflow: hidden;
+    margin-bottom: 25px;
+    font-family: "pingfang";
+}
+
+.m-tit-1 {
+    font-size: 36px;
+    color: #000;
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+    background: url(../images/pic-05.jpg) left center repeat-x;
+}
+
+.m-tit-1 span {
+    display: inline-block;
+    padding: 0 45px;
+    background-color: #fff;
+}
+
+.s-list5 {
+    overflow: hidden;
+    text-align: center;
+    font-family: "pingfang";
+    margin: 51px 0 95px;
+}
+.m-pro2 .pro-p {
+    width: 67%;
+    float: right;
+}
+
+.slider.one-time {
+    width: 340px;
+    height: 340px;
+    margin: 0 auto;
+}
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slider.one-time .pic {
+    display: block;
+    width: 340px;
+    height: 340px;
+}
+
+.slider.one-time .pic img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ecdada;
+    margin-top: 80px;
+}
+
+track:after {
+    display: table;
+    content: '';
+}
+
+.m-pro2 .pro-t {
+    width: 33%;
+    float: left;
+    padding-top: 20px;
+    background-color: #fff;
+}
+
+.m-pro2 .pro-t .tit {
+    font-size: 16px;
+    color: #666;
+}
+
+.m-pro2 .pro-t h2 {
+    font-size: 30px;
+    color: #040404;
+    line-height: 46px;
+    margin-left: 34px
+}
+
+.m-pro2 .pro-t p {
+    font-size: 18px;
+    color: #040404;
+    line-height: 50px;
+}
+.s-list3 li {
+    height: 30px;
+}
+
+.s-list3 li.v3 a {
+    background-image: url(../images/ico-06.png);
+}
+.s-list3 li a {
+    display: block;
+    height: 21px;
+    line-height: 21px;
+    padding-left: 31px;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.s-list3 .v4 {
+    position: relative;
+}
+.s-list3 li.v4 a.bds {
+    background-image: url(../images/ico-06.png);
+}
+.sharbox {
+    border: 1px solid #9f0028;
+    width: 90px;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    display: none;
+}
+.sharbox h3 {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    padding-left: 10px;
+    font-weight: normal;
+    background: #9f0028;
+    color: #fff;
+}
+
+.sharbox .bdsharebuttonbox {
+    padding: 5px;
+}
+
+.bdshare-button-style2-16 {
+    zoom: 1;
+}
+
+.sharbox .bdsharebuttonbox a.bds_tsina {
+    background-position: 0 -40px;
+}
+
+.sharbox .bdsharebuttonbox a {
+    background: url(../images/sha1.png) no-repeat 0 3px;
+    margin: 0;
+    padding-left: 20px;
+    height: 18px;
+    line-height: 18px;
+    margin: 2px 0;
+    color: #666;
+}
+
+.sharbox .bdsharebuttonbox a.bds_weixin {
+    background-position: 0 -20px;
+}
+
+.m-pro3 h4 {
+    font-family: "pingfang";
+    font-size: 20px;
+    color: #040404;
+    margin-bottom: 32px;
+}
+
+.m-pro3 .con {
+    font-size: 14px;
+    color: #999;
+}
+
+.m-pro3 .con span {
+    display: inline-block;
+    margin-right: 74px;
+}
+
+.m-pro3 .con em {
+    color: #333;
+}
+
+.m-tit-1 span {
+    display: inline-block;
+    padding: 0 45px;
+    background-color: #fff;
+}
+
+.s-list5 li {
+    width: 25%;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.s-list5 .con {
+    display: block;
+    margin: 0 48px;
+}
+
+.s-list5 .pic {
+    width: 100%;
+    line-height: 240px;
+    overflow: hidden;
+    border: 1px solid #e6d0d0
+}
+
+.s-list5 .pic img {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 0;
+    height:244px;
+}
+
+.s-list5 li h4 {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+.s-list5 li p {
+    font-size: 14px;
+    color: #999;
+}
+
+pre{
+white-space:pre-wrap;
+white-space:-moz-pre-wrap;
+white-space:-pre-wrap;
+white-space:-o-pre-wrap;
+word-wrap:break-word;
+}
+
+
+

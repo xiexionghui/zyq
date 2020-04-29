@@ -1,0 +1,148 @@
+/*全控制*/
+.wrapper {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.section {
+    position: relative;
+    overflow: hidden;
+    padding: 0 15px;
+}
+body {
+    position: relative;
+    font-family: GothamBook,Arial,PingFang SC,Microsoft JhengHei,Ã¥Â¾Â®Ã¨Â»Å¸Ã¦Â­Â£Ã©Â»â€˜Ã©Â«â€�,sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0;
+    background: #253a4d;
+    color: #fff;
+}
+
+.inner, .inner.active {
+    opacity: 1;
+}
+
+.section__wrapper {
+    position: relative;
+    max-width: 1110px;
+    margin: 50px auto;
+    padding: 0;
+}
+
+.tabs-container .nav-tabs {
+    border: none;
+    margin-bottom: 30px;
+}
+
+.tab-content>.active {
+    display: block;
+}
+
+.dropdown-container--news-year {
+    font-size: 20px;
+    font-family: DinCondensedBold,Arial,PingFang SC,Microsoft JhengHei,Ã¥Â¾Â®Ã¨Â»Å¸Ã¦Â­Â£Ã©Â»â€˜Ã©Â«â€�,sans-serif;
+    width: 100%;
+    height: 60px;
+    margin-top: -63px;
+}
+
+ul {
+    padding-top: 0;
+    padding-left: 0;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.content-list-item-container {
+    position: relative;
+    border-bottom: 1.5px solid #7c7c7c;
+}
+
+.content-list-item-container .content-list-item {
+    position: relative;
+    display: table;
+    width: 100%;
+    padding: 25px 12px;
+    text-decoration: none;
+}
+
+.content-list-item-container .content-list-item__img {
+    width: 20%;
+    max-width: 250px;
+   
+}
+
+.content-list-item-container .content-list-item__detail, .content-list-item-container .content-list-item__img {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+list-item__img img {
+    max-width: 255px;
+}
+
+.content-list-item-container .content-list-item__detail {
+    padding: 5px 10px 5px 25px;
+}
+
+.content-list-item-container .content-list-item__detail__date {
+    font-size: 16px;
+    font-family: DinCondensedBold,Arial,PingFang SC,Microsoft JhengHei,Ã¥Â¾Â®Ã¨Â»Å¸Ã¦Â­Â£Ã©Â»â€˜Ã©Â«â€�,sans-serif;
+    padding-bottom: 3px;
+}
+
+.content-list-item-container .content-list-item__detail__desc {
+    font-size: 22px;
+    line-height: 26px;
+    font-family: DinCondensedBold,Arial,PingFang SC,Microsoft JhengHei,Ã¥Â¾Â®Ã¨Â»Å¸Ã¦Â­Â£Ã©Â»â€˜Ã©Â«â€�,sans-serif;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+}
+.content-list-item-container {
+    position: relative;
+    border-bottom: 1.5px solid #7c7c7c;
+}
+
+
+.content-list-item-container .content-list-item:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0;
+    height: 2px;
+    background: #c0a884;
+    -webkit-transition: width .3s ease;
+    transition: width .3s ease;
+}
+
+
+/*列表图片大小*/
+img {
+    max-width: 65%;
+    transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+}
+
+.layui-laypage .layui-laypage-skip {
+    height: 30px;
+    line-height: 20px;
+    color: #999;
+}
+
